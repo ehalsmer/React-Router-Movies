@@ -33,7 +33,7 @@ function MovieDetails({ movie }) {
   console.log(movie);
   return (
     <div className="movie-card">
-      <Link to={`movies/${movie.id}`}>{movie.id}</Link>
+      <Link style={linkStyle} to={`movies/${movie.id}`}>
       <h2>{title}</h2>
       <div className="movie-director">
         Director: <em>{director}</em>
@@ -48,8 +48,15 @@ function MovieDetails({ movie }) {
           {star}
         </div>
       ))}
+      </Link>
     </div>
   );
 }
 
 export default MovieList;
+
+
+const linkStyle = {
+  textDecoration: 'none',
+  color: 'black'
+}
