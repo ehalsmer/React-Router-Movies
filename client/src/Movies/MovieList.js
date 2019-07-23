@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import MovieCard from './MovieCard';
+import SimpleCard from './SimpleCard';
 
 const MovieList = (props) => {
   const [movies, setMovies] = useState([])
@@ -27,9 +28,13 @@ const MovieList = (props) => {
         console.log('props inside map', props)
         // <MovieDetails {...props} addToSavedList={props.addToSavedList} key={movie.id} movie={movie} />
         return(
-        <Link style={linkStyle} to={`movies/${movie.id}`}>
-        <MovieCard {...props} addToSavedList={props.addToSavedList} movie={movie}/>
-        </Link>
+          <div>
+            <SimpleCard {...props} addToSavedList={props.addToSavedList} movie={movie}>
+
+            {/* <Link style={linkStyle} to={`movies/${movie.id}`}>Read More
+            </Link> */}
+            </SimpleCard>
+          </div>
         )
     })}
     </div>

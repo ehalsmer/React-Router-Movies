@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button} from 'semantic-ui-react';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
@@ -26,7 +27,7 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div onClick={saveMovie} className="save-button">Save</div>
+      <Button color="teal" onClick={saveMovie} className="save-button">Save</Button>
     </div>
   );
 };
