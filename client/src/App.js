@@ -14,10 +14,15 @@ const App = () => {
   const clearSavedList = ()=>{
     setSavedList([]);
   }
+  const removeTitle = id =>{
+    console.log('I would like to remove ID:', id);
+    setSavedList([...savedList].filter(element => element.id !== id));
+    console.log('Removed id:', id, 'saved list is now:', savedList);
+  }
 
   return (
     <div>
-      <SavedList list={savedList} clearSavedList={clearSavedList}/>
+      <SavedList list={savedList} clearSavedList={clearSavedList} removeTitle={removeTitle}/>
       {/* <div>Replace this Div with your Routes</div> */}
 
       <Route exact path='/' render={(props)=>{return (<MovieList {...props} addToSavedList={addToSavedList} /> )}}/>

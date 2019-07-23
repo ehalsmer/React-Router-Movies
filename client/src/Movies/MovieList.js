@@ -6,7 +6,7 @@ import SimpleCard from './SimpleCard';
 
 const MovieList = (props) => {
   const [movies, setMovies] = useState([])
-  console.log('beginning of MovieList props', props)
+  // console.log('beginning of MovieList props', props)
   useEffect(() => {
     const getMovies = () => {
       axios
@@ -20,12 +20,12 @@ const MovieList = (props) => {
     }
     getMovies();
   }, []);
-  console.log('middle of MovieList props', props)
+  // console.log('middle of MovieList props', props)
 
   return (
     <div className="movie-list">
       {movies.map((movie) => {
-        console.log('props inside map', props)
+        // console.log('props inside map', props)
         // <MovieDetails {...props} addToSavedList={props.addToSavedList} key={movie.id} movie={movie} />
         return(
           <div>

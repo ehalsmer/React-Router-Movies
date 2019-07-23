@@ -4,7 +4,7 @@ import { Button } from "semantic-ui-react";
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
-  console.log(props);
+//   console.log(props);
 
   const saveMovie = () => {
     const addToSavedList = props.addToSavedList;

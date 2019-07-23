@@ -4,19 +4,14 @@ import {Item, Container, Button} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 const SavedList = props => {
-  console.log('saved list props', props);
-
-  const clearList = () => {
-    const clearSavedList = props.clearSavedList;
-    clearSavedList()
-  }
+  // console.log('saved list props', props);
 
   return (
   <div className="saved-list">
     <h3>Saved Movies:</h3>
     <Container className="saved-container">
       {props.list.map(movie => (
-        <Item className="saved-movie">{movie.title}</Item>
+        <Item className="saved-movie"><Button onClick={()=>props.removeTitle(movie.id)} compact circular size='mini'>x</Button>{movie.title}</Item>
       ))}
     </Container>
     <div style={{display: 'flex', alignItems:'center', justifyContent:'space-between'}}>
