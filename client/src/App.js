@@ -11,10 +11,13 @@ const App = () => {
   const addToSavedList = movie => {
     setSavedList( [...savedList, movie] );
   };
+  const clearSavedList = ()=>{
+    setSavedList([]);
+  }
 
   return (
     <div>
-      <SavedList list={savedList} />
+      <SavedList list={savedList} clearSavedList={clearSavedList}/>
       {/* <div>Replace this Div with your Routes</div> */}
 
       <Route exact path='/' render={(props)=>{return (<MovieList {...props} addToSavedList={addToSavedList} /> )}}/>
