@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 import {Item, Container, Button} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
@@ -11,8 +11,12 @@ const SavedList = props => {
     <h3>Saved Movies:</h3>
     <Container className="saved-container">
       {props.list.map(movie => (
-        <Item className="saved-movie"><Button onClick={()=>props.removeTitle(movie.id)} compact circular size='mini'>x</Button>{movie.title}</Item>
-      ))}
+        <div>
+          <Item className="saved-movie"><Button onClick={()=>props.removeTitle(movie.id)} compact circular size='mini'>x</Button>{movie.title}</Item>
+          {/* <Link to={`/movies/${movie.id}`}>link</Link> */}
+        </div>
+        
+        ))}
     </Container>
     <div style={{display: 'flex', alignItems:'center', justifyContent:'space-between'}}>
       <Link to="/" style={{textDecoration:'none'}}><Button color="blue">Home</Button></Link>
