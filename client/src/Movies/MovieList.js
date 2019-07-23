@@ -19,12 +19,19 @@ const MovieList = (props) => {
     }
     getMovies();
   }, []);
-  
+  console.log('middle of MovieList props', props)
+
   return (
     <div className="movie-list">
-      {movies.map(movie => (
-        <MovieDetails {...props} addToSavedList={props.addToSavedList} key={movie.id} movie={movie} />
-      ))}
+      {movies.map((movie) => {
+        console.log('props inside map', props)
+        // <MovieDetails {...props} addToSavedList={props.addToSavedList} key={movie.id} movie={movie} />
+        return(
+        <Link style={linkStyle} to={`movies/${movie.id}`}>
+        <MovieCard {...props} addToSavedList={props.addToSavedList} movie={movie}/>
+        </Link>
+        )
+    })}
     </div>
   );
 }
@@ -33,9 +40,7 @@ function MovieDetails({movie}, props) {
   console.log('movielist props', props)
   return (
     <div>
-      <Link style={linkStyle} to={`movies/${movie.id}`}>
-      <MovieCard {...props} movie={movie}/>
-      </Link>
+
     </div>
   );
 }
