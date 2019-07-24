@@ -5,7 +5,7 @@ import SavedList from './SavedList';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  console.log('movie props', props);
+  // console.log('movie props', props);
 
   useEffect(() => {
 
@@ -17,12 +17,13 @@ const Movie = (props) => {
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
           setMovie(response.data);
+          console.log('response from axios', response)
         })
         .catch(error => {
           console.error(error);
         });
 
-  },[]);
+  },[movie]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
