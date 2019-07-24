@@ -12,9 +12,9 @@ const SavedList = props => {
     <Container className="saved-container">
       {props.list.map(movie => (
         <div>
-          <Link  to={`/movies/${movie.id}`}>Link
-          </Link >
+          <Link  to={`/movies/${movie.id}`}>
             <Button onClick={()=>props.removeTitle(movie.id)} compact circular size='mini'>x</Button>{movie.title}
+          </Link >
           {/* <Link to={`/movies/${movie.id}`}>link</Link> */}
 
         </div>

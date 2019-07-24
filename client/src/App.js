@@ -15,9 +15,8 @@ const App = () => {
     setSavedList([]);
   }
   const removeTitle = id =>{
-    // console.log('I would like to remove ID:', id);
+    // filters out the current id you're removing from the savedList
     setSavedList([...savedList].filter(element => element.id !== id));
-    // console.log('Removed id:', id, 'saved list is now:', savedList);
   }
 
   return (
