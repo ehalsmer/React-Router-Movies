@@ -61,12 +61,55 @@ body {
   padding: 5px 10px;
   background-color: lightseagreen;
 }
+
 .save-button:hover {
   background-color: green;
   color: white;
 }
+.more-button {
+  position: absolute;
+  top: 25px;
+  right: 95px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: rgb(201, 209, 209);
+  text-decoration: none;
+  color: black;
+  background-color: 'gainsboro'
+}
+.more-button:hover {
+  background-color: papayawhip;
+
+}
+
 
 .home-button {
   padding: 5px 10px;
   background-color: lightskyblue;
+  color: black;
+  border: 1px solid grey;
+  margin: 2px;
+
+}
+.home-button:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.clear-button {
+  padding: 5px 10px;
+  background-color: lightsalmon;
+  border: 1px solid grey;
+  margin: 2px;
+
+}
+
+.clear-button:hover {
+  background-color: darkorange;
+  color: white;
+}
+
+.simple {
+  display: flex;
+  justify-content: space-between;
 }
